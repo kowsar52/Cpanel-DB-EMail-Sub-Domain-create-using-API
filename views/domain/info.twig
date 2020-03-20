@@ -1,0 +1,41 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Domain Information{% endblock %}
+{% block content %}
+    <label for=""><strong>Type</strong></label><br>
+    <label for="">{{ result.type}}</label>
+    <hr>
+    <label for=""><strong>Internet Protocol</strong></label><br>
+    <label for="">{{ result.ip}}</label>
+    <hr>
+    <label for=""><strong>Port</strong></label><br>
+    <label for="">{{ result.port}}</label>
+    <hr>
+    <label for=""><strong>Document Root</strong></label><br>
+    <label for="">{{ result.documentroot}}</label>
+    <hr>
+    <label for=""><strong>Domain</strong></label><br>
+    <label for="">{{ result.domain}}</label>
+    <hr>
+    <label for=""><strong>User</strong></label><br>
+    <label for="">{{ result.user}}</label>
+    <hr>
+    <label for=""><strong>Server Name</strong></label><br>
+    <label for="">{{ result.servername}}</label>
+    <hr>
+    <label for=""><strong>Owner</strong></label><br>
+    <label for="">{{ result.owner}}</label>
+    <hr>
+    <label for=""><strong>Home Directory</strong></label><br>
+    <label for="">{{ result.homedir}}</label>
+    <hr>
+    <label for=""><strong>PHP Version</strong></label><br>
+    <label for="">{{ result.phpversion}}</label>
+    <hr>
+    <label for=""><strong>Server Alias</strong></label><br>
+    <label for="">{{ result.serveralias}}</label>
+    <hr>
+    <label for=""><strong>Server Administrator</strong></label><br>
+    <label for="">{{ result.serveradmin}}</label>
+    <hr>
+{% endblock %}

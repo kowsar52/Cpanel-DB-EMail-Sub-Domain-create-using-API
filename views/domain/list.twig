@@ -1,0 +1,30 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Domain list{% endblock %}
+{% block content %}
+    <label for=""><strong>Main Domain</strong></label>
+    <ol>
+        <li><label for="">{{ result.main_domain}}</label></li>
+    </ol>
+
+    <label for=""><strong>Addon Domains</strong></label>
+    <ol>
+        {% for domain in result.addon_domains %}
+            <li><label for="">{{ domain }}</label></li>            
+        {% endfor %}
+    </ol>
+
+    <label for=""><strong>Parked Domains</strong></label>
+    <ol>
+        {% for domain in result.parked_domains %}
+            <li><label for="">{{ domain }}</label></li>            
+        {% endfor %}
+    </ol>
+
+    <label for=""><strong>Sub Domains</strong></label>
+    <ol>
+        {% for domain in result.sub_domains %}
+            <li><label for="">{{ domain }}</label></li>            
+        {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Email Accounts list{% endblock %}
+{% block content %}
+    <label for=""><strong>Email Accounts</strong></label>
+    <ol>
+        {% for email in result %}
+            <li>{{email.email}}</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Domain Information{% endblock %}
+{% block content %}
+    <form action="/domain/show.php" method="post">
+        <label for="">Select a domain</label>
+        <select name="domain" id="domain" class="form-control" style="border-radius: 0px;">
+            <option value="{{result.main_domain}}">{{ result.main_domain}}</option>
+            {% for domain in result.addon_domains %}
+                <option value="{{domain}}">{{ domain}}</option>                
+            {% endfor %}
+            {% for domain in result.parked_domains %}
+                <option value="{{domain}}">{{ domain}}</option>                
+            {% endfor %}
+            {% for domain in result.sub_domains %}
+                <option value="{{domain}}">{{ domain}}</option>                
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit" class="btn btn-md btn-primary btn-block" style="border-radius:0px;">Fetch Information</button>
+    </form>
+{% endblock %}

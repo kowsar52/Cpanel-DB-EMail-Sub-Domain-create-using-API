@@ -1,0 +1,11 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Database Listing{% endblock %}
+{% block content %}
+    <label for=""><strong>Databases</strong></label>
+    <ol>
+        {% for data in result %}
+            <li>{{ data.db}} ({{ data.sizemeg}} MB) - {{data.usercount}} users</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Delete Database{% endblock %}
+{% block content %}
+    <form action="/database/delete.php" method="post">
+        <label for="">Select a database</label>
+        <select name="database" id="database" class="form-control">
+            {% for db in result %}
+                <option value="{{db.db}}">{{db.db}}</option>                
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit" class="btn btn-block btn-primary btn-md" style="border-radius: 0px;">Delete Database</button>
+    </form>
+
+{% endblock %}

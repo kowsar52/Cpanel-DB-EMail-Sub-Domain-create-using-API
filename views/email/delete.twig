@@ -1,0 +1,15 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Delete Email Accounts{% endblock %}
+{% block content %}
+    <form action="/email/delete.php" method="post">
+        <label for="">Select an Email</label>
+        <select name="email" id="email" class="form-control" style="border-radius: 0px;">
+            {% for data in result %}
+                <option value="{{ data.email}}">{{ data.email }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="submit" class="btn btn-md btn-primary btn-block" style="border-radius: 0px;">Delete Email Address</button>
+    </form>
+{% endblock %}

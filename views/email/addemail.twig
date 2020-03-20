@@ -1,0 +1,20 @@
+{% extends 'template/default.twig' %}
+{% block title %}My cPanel{% endblock %}
+{% block desc %}Add an email account{% endblock %}
+{% block content %}
+    <form action="/email/add.php" method="post">
+        <label for="">Username</label>
+        <input type="text" name="name" placeholder="adnan" class="form-control" style="border-radius: 0px;"><br>
+
+        <label for="">Domain</label>
+        <input type="text" name="domain" placeholder="myphpnotes.tk" class="form-control" style="border-radius: 0px;"><br>
+
+        <label for="">Password</label>
+        <input type="password" name="pass" class="form-control" style="border-radius: 0px;"><br>
+
+        <label for="">Quota (MB)</label>
+        <input type="text" name="quota" placeholder="0 for unlimited" class="form-control" style="border-radius: 0px;" value="0"><br>
+
+        <button type="submit" class="btn btn-block btn-primary btn-md" style="border-radius: 0px;">Add Email Account</button>
+    </form>
+{% endblock %}
